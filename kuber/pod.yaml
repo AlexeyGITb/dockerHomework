@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app
+  labels:
+    label: app-pod
+
+spec:
+  containers:
+    - name: app
+      image: mirgraf/mirgraf_rep:v2

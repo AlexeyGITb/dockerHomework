@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs
+  labels:
+    app: rs
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      label: app-pod
+  template:
+    metadata:
+      labels:
+        label: app-pod
+    spec:
+      containers:
+        - name: app
+          image: mirgraf/mirgraf_rep:v2
