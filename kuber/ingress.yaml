@@ -12,6 +12,6 @@
             pathType: Exact
             backend:
               service:
-                name: service
+                name: service-test
                 port:
-                  number: 8000
+                  number: 80

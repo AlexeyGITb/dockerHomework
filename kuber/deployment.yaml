@@ -6,12 +6,14 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      label: app-pod
+      label-test: app-pod
   template:
     metadata:
       labels:
-        label: app-pod
+        label-test: app-pod
     spec:
       containers:
         - name: app
           image: mirgraf/mirgraf_rep:v2
+          ports:
+            - containerPort: 8000
