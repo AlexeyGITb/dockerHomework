@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config
+data:
+  DB-HOST: "jdbc:postgresql://pg-db-postgresql:5432/otus_db"

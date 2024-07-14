@@ -6,12 +6,30 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      label: app-pod
+      label-test: app-pod
   template:
     metadata:
       labels:
-        label: app-pod
+        label-test: app-pod
     spec:
       containers:
         - name: app
-          image: mirgraf/mirgraf_rep:v2
+          image: mirgraf/mirgraf_rep:V6.1
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DB-HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: config
+                  key: DB-HOST
+            - name: DB-USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: secret
+                  key: DB-USERNAME
+            - name: DB-PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: secret
+                  key: DB-PASSWORD

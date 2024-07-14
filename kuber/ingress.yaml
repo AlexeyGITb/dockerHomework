@@ -6,12 +6,12 @@
   spec:
     rules:
       - host: arch.homework
-      - http:
+        http:
           paths:
           - path: /
-            pathType: Exact
+            pathType: Prefix
             backend:
               service:
-                name: service
+                name: service-test
                 port:
-                  number: 8000
+                  number: 80
