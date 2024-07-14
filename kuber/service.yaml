@@ -9,9 +9,6 @@ spec:
     label-test: app-pod
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 8000
-    - protocol: TCP
-      name: metrics
+      name: metrics123
       port: 80
       targetPort: 8000

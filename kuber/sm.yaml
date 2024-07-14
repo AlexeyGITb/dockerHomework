@@ -4,7 +4,12 @@ metadata:
   name: service-monitor
 spec:
   endpoints:
-    - port: metrics
+    - port: nginx-exporter
+      scrapeTimeout: 30s
+      path: /stub_status
+      honorLabels: true
+      scheme: http
+    - port: metrics123
       scrapeTimeout: 30s
       path: /actuator/prometheus
       honorLabels: true
@@ -15,3 +20,5 @@ spec:
   selector:
     matchLabels:
       label-test: service-test
+      app: nginx-exporter
+

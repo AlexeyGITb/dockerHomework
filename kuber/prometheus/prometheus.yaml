@@ -2,3 +2,13 @@ prometheus:
   prometheusSpec:
     serviceMonitorSelectorNilUsesHelmValues: false
     serviceMonitorSelector: {}
+
+#global:
+#  scrape_interval: 15s
+#  evaluation_interval: 15s
+#
+#scrape_configs:
+#  - job_name: 'nginx'
+#    metrics_path: '/stub_status'
+#    static_configs:
+#      - targets: ['nginx-exporter:8080']
